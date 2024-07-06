@@ -1,0 +1,781 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<div class="main">
+
+    <div class="mainBanner">
+        <a href="#">
+            <img src="../Content/Assests/Images/Banners/BanerMain.png" class="mainBanner_img" alt="">
+        </a>
+    </div>
+
+    <div class="main_content">
+        <!-- slider home -->
+        <div class="home_slider">
+            <div class="slider_content">
+                <div class="slider_list">
+                    <a href="#" class="slider_item">
+                        <img src="../Content/Assests/Images/Banners/banner_slider/banner_slider_1.png" alt="">
+                    </a>
+                    <a href="#" class="slider_item">
+                        <img src="../Content/Assests/Images/Banners/banner_slider/banner_slider_2.png" alt="">
+                    </a>
+                    <a href="#" class="slider_item">
+                        <img src="../Content/Assests/Images/Banners/banner_slider/banner_slider_3.png" alt="">
+                    </a>
+                    <a href="#" class="slider_item">
+                        <img src="../Content/Assests/Images/Banners/banner_slider/banner_slider_4.png" alt="">
+                    </a>
+                    <a href="#" class="slider_item">
+                        <img src="../Content/Assests/Images/Banners/banner_slider/banner_slider_5.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="slider_btn slider_next" onclick="sliderNext()"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="slider_btn slider_pre" onclick="sliderPre()"><i class="fa-solid fa-chevron-left"></i></div>
+        </div>
+        <!-- Deal Mini -->
+
+        <ul class="home_Deal_Mini">
+            <li>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/DealMini/OppoDeal.png" alt="">
+                    <span>
+                        Sắm OPPO <br> Deal Cực Chất
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/DealMini/DealPhuKien.png" alt="">
+                    <span>
+                        Lễ Lớn <br> Phụ Kiện giảm lớn
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/DealMini/LapTopDiemThi.png" alt="">
+                    <span>Laptop <br> Đổi điểm thi</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/DealMini/TabletGiaRe.png" alt="">
+                    <span>Table <br> Giá Rẻ Quá</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Banner Mini -->
+
+        <div class="home_banner_mini">
+            <a href="#">
+                <img src="../Content/Assests/Images/Banners/banner_full_1.png" alt="">
+            </a>
+        </div>
+
+        <!-- Hot Deal -->
+
+        <div class="hotDeal">
+            <div class="hotDeal_head">
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/HotDeal/Top-deal-soc-Desktop-1200x120.png" alt="">
+                </a>
+            </div>
+            <div class="hotDeal_content">
+                <div class="hotDeal_content_list">
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-14-pro-max-tim-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 14 Pro Max 128GB</h3>
+                            <strong class="produce_price">
+                                26.490.000₫
+                                <small>-11%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star"></i>
+                                (357)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="hotDealBtnPre btn_directional" onclick="HotDeal_Pre(this)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="hotDealBtnNext btn_directional" onclick="HotDeal_Next(this)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <a href="#" class="hotDeal_content_btn">
+                    <span>Xem tất cả  <i class="fa-solid fa-chevron-right"></i></span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hotDeal" style="background-color: #920101;">
+            <div class="hotDeal_head">
+                <a href="#">
+                    <img src="../Content/Assests/Images/Banners/HotDeal/Frame-1-1200x120-1.png" alt="">
+                </a>
+            </div>
+            <div class="hotDeal_content">
+                <div class="hotDeal_content_list">
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-14-pro-max-tim-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 14 Pro Max 128GB</h3>
+                            <strong class="produce_price">
+                                26.490.000₫
+                                <small>-11%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.5</span>
+                                <i class="fa-solid fa-star"></i>
+                                (357)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/Galaxy-S22-Ultra-Burgundy-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">Samsung Galaxy S22 Ultra 5G 128GB</h3>
+                            <strong class="produce_price">
+                                17.790.000₫
+                                <small>-42%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (164)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/oppo-a58-4g-green-thumb-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">OPPO A58 8GB</h3>
+                            <strong class="produce_price">
+                                5.690.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c51-xanh-thumbnail-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C51 64GB</h3>
+                            <strong class="produce_price">
+                                3.390.000₫
+                                <small>-5%</small>
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/realme-c53-gold-thumb-1-600x600.jpg" alt="">
+                            </div>
+                            <h3 class="produce_name">realme C53</h3>
+                            <strong class="produce_price">
+                                4.090.000₫
+                                <small>-4%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.4</span>
+                                <i class="fa-solid fa-star"></i>
+                                (438)
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="hotDealBtnPre btn_directional" onclick="HotDeal_Pre(this)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="hotDealBtnNext btn_directional" onclick="HotDeal_Next(this)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <a href="#" class="hotDeal_content_btn">
+                    <span>Xem tất cả  <i class="fa-solid fa-chevron-right"></i></span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- GỢI Ý HÔM NAY -->
+        <div class="ToDaySuggest">
+            <h1 class="ToDaySuggest_header">
+                GỢI Ý HÔM NAY
+            </h1>
+            <div class="ToDaySuggest_option">
+                <a href="#" class="active">
+                    <img src="../Content/Assests/Images/Icon/goiy-1.jpg" alt="">
+                    <span>Cho Bạn</span>
+                </a>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Icon/icon-laptop-gaming-desk-50x50-50x50-50x50-1.jpg" alt="">
+                    <span>Laptop Gaming</span>
+                </a>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Icon/pk-50-50x50-50x50-2.jpg" alt="">
+                    <span>Phụ kiện giảm sốc</span>
+                </a>
+                <a href="#">
+                    <img src="../Content/Assests/Images/Icon/desk11-50x50-1-50x50-1-50x50.jpg" alt="">
+                    <span>Tablet giá rẻ</span>
+                </a>
+            </div>
+            <div class="ToDaySuggest_content">
+                <div class="ToDaySuggest_content_item active">
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                    <div class="produce_item">
+                        <a href="#">
+                            <div href="#" class="produce_item_img">
+                                <img src="../Content/Assests/Images/Products/iphone-11-trang-600x600.png" alt="">
+                            </div>
+                            <h3 class="produce_name">iPhone 11 64GB</h3>
+                            <strong class="produce_price">
+                                10.690.000₫
+                                <small>-10%</small>
+                            </strong>
+                            <div class="produce_vote">
+                                <span>4.1</span>
+                                <i class="fa-solid fa-star"></i>
+                                (786)
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

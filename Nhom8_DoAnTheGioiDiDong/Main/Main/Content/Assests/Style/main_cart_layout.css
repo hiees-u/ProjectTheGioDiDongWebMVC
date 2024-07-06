@@ -1,0 +1,126 @@
+
+:root {
+    --width-content: 1200px;
+    --max-width-content: 1200px;
+    --width-name-cart: 45%;
+    --width-name-cart: 15%;
+}
+
+.cart_content {
+    width: calc(var(--width-content) - 20px);
+    margin: 30px auto;
+    min-height: 100px;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+.cart_item {
+    width: calc(var(--width-content) - 20px);
+    margin: 20px 0;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 5% 15% 25% 16% 15% 9% 15%;
+    height: 100px;
+}
+
+    .cart_item.cart_header {
+        border-bottom: 1px solid #ffd400;
+        margin: 0;
+        height: 60px;
+    }
+
+        .cart_item.cart_header .cart_item_name {
+            grid-column: 2/4;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+.cart_item_check input {
+    width: 100%;
+    height: 25px;
+}
+
+.cart_item_img {
+    height: 100px;
+}
+
+    .cart_item_img img {
+        height: 100%;
+        display: block;
+        margin: auto;
+    }
+
+.cart_item_name, .cart_item_Option, .cart_item_pri, .cart_item_quantity, .cart_item_del, .cart_item_check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .cart_item_name  {
+        justify-content: flex-start;
+    }
+
+    .cart_item_name span, .cart_item_pri span, .cart_item_quantity span, .cart_item_Option span {
+        font-size: 22px;
+        display: block;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .cart_item_pri span {
+        color: #000;
+    }
+
+.cart_item_quantity {
+}
+
+.cart_item_del {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart_item_del a, .cart_item_del input {
+    width: fit-content;
+    background: #ffd400;
+    padding: 0px 10px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+    .cart_item_del button {
+        height: 40px;
+        width: fit-content;
+        min-width: 50px;
+        max-width: 100px;
+        padding: 0 10px;
+        border: none;
+        font-size: 16px;
+        background-color: #ffd400;
+        border-radius: 10px;
+    }
+
+.cart_item.footer {
+    justify-items: center;
+    margin: 0;
+    border-top: 1px solid #ffd400;
+}
+
+.cart_btn {
+    grid-column: 1/-1;
+}
+
+    .cart_btn input {
+        width: 250px;
+        height: 50px;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #ffd400;
+    }

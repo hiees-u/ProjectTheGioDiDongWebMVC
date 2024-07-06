@@ -1,0 +1,123 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 24px;;
+    color: #000;
+}
+
+input {
+    outline: none;
+}
+.content_order {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.content_order, .group_product_order {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.orderIf {
+    width: 70%;
+    margin: auto;
+    padding: 20px 30px;
+}
+
+.frm_box {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.frm_box.header {
+    justify-content: center;
+    align-items: center;
+}
+
+.frm_box h1 {
+    font-size: 34px;
+}
+
+.frm_box input{
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.frm_box label{
+    width: 35%;
+    font-weight: bold;
+    line-height: 40px;
+    height: 100%;
+}
+
+.frm_box input[type = "submit"] {
+    border: none;
+    width: 40%;
+    background-color: #ffd400;
+    padding: 15px;
+    height: auto;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.err_mess {
+    width: 100%;
+    margin: 10px 0;
+    color: red;
+    padding-left: 20px;
+}
+
+/*  */
+
+.cart_item {
+    display: grid;
+    grid-template-columns: 10% 30% 20% 15% 10% 15%;
+    align-items: center;
+    justify-items: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.cart_item.cart_header {
+    font-weight: bold;
+    padding: 15px 0;
+    border-bottom: 1px solid #ffd400;
+}
+
+.cart_item.cart_header .cart_item_name{
+    grid-column: 1/4;
+}
+
+.cart_item.cart_header .cart_item_name,.cart_item.cart_header .cart_item_pri,.cart_item.cart_header .cart_item_quantity {
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid #141413;
+}
+
+.cart_item_img img{
+    width: 80%;
+}
+
+.cart_item.item_bottom {
+    border-top: 1px solid #ffd400;
+    padding: 20px;
+}
+
+.cart_item.item_bottom>.cart_item_quantity {
+    grid-column: 5/6;
+} 
+
+.cart_item.item_bottom>.cart_item_quantity,.cart_item.item_bottom>.cart_item_sumPri  {
+    font-weight: bold;
+}

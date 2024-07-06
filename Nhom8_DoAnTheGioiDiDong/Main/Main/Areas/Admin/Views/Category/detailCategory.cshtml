@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Main.Models.Product>
+@using Main.Models
+
+@{
+    ViewBag.Title = "showProduct";
+    Layout = "~/Areas/Admin/Views/Shared/admin_page.cshtml";
+    var cg = Session["info"] as Category;
+}
+<style>
+    td a {
+        color: blue;
+    }
+
+    p a {
+        color: blue;
+    }
+</style>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <h2>CHI TIẾT LOẠI @cg.Name</h2>
+        <p>
+            @Html.ActionLink("Tạo mới", "createProduct", "Product")
+        </p>
+    </div>
+    <div>
+        @using (Html.BeginForm("searchForName", "Product"))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style=" display: flex; justify-content: flex-end;">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div>
+                        <input type="text" name="search" id="search" class="form-control" placeholder="iPhone..." style="height:25px" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Tìm" class="btn btn-default" style="width: 70px; height: 29px" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<table class="table">
+    <tr style="height:50px">
+        <th>
+            Id
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th width="20%">
+            Mô tả
+        </th>
+        <th>
+            Loại
+        </th>
+        <th>
+            Hãng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center;height:10px">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            @if (item.Description.Length > 41)
+            {
+                <td>@item.Description.Substring(0, 40)...</td>
+            }
+            else
+            {
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "editshow", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "deleteShow", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    <div>
+        <a href="@Url.Action("showCategory","Category")" style="color:blue">Back to Category list</a>
+    </div>
+</table>

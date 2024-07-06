@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/Assests/Style/main_index_layout_page.css">
+
+    <title>Thegioididong.com - ...</title>
+</head>
+<body>
+    <div class="header_home">
+        <div class="header_home__top">
+            <div>
+                <a href="@Url.Action("Index","Home")" class="header_home__logo">
+                </a>
+                <a href="#" class="header_home__address">
+                    Xem giá, tồn kho tại:
+                    <br>
+                    <span>Hồ Chí Minh</span>
+                </a>
+                <form action="" class="header_home__search">
+                    <input type="text" placeholder="Bạn tìm gì..." name="key" autocomplete="off" maxlength="100">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <a href="#" class="header_home__user-oder">Tài khoản &<br>Đơn hàng</a>
+                
+                @Html.Action("CountCartPartial", "Cart")
+
+                <div class="header_home__list_top">
+                    <div class="divitem">
+                        <a href="#">24h <br>Công nghệ</a>
+                    </div>
+                    <div class="bordercol"></div>
+                    <div class="divitem">
+                        <a href="#">Hỏi đáp</a>
+                    </div>
+                    <div class="bordercol"></div>
+                    <div class="divitem">
+                        <a href="#">GameApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_home__main">
+            @Html.Action("CategoryPartial", "Home")
+        </div>
+    </div>
+
+
+
+    <div class="bg-ellipse"></div>
+
+
+    <div class="container_">        
+
+        @RenderBody()
+
+    </div>
+
+    <div class="footer">
+        <div class="footer_content">
+            <div class="footer_content_item">
+                <ul class="footer_content_item_list">
+                    <li><a href="#">Tích điểm Quà tặng VIP</a></li>
+                    <li><a href="#">Lịch sử mua hàng</a></li>
+                    <li><a href="#">Tìm hiểu về mua trả góp</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li>
+                        <a href="#">
+                            Xem thêm
+                            <i class="fa-solid fa-sort-down"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_content_item">
+                <ul class="footer_content_item_list">
+                    <li><a href="#">Giới thiệu công ty(MWG.vn)</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Gửi góp ý, khiếu nại</a></li>
+                    <li><a href="#">Tìm siêu thi(3.362 shop)</a></li>
+                    <li><a href="#">Xem bản mobile</a></li>
+                </ul>
+            </div>
+            <div class="footer_content_item">
+                <ul class="footer_content_item_list">
+                    <li>
+                        <span class="active">Tổng đài hỗ trợ (Miễn phí gọi)</span>
+                    </li>
+                    <li>
+                        <span>Gọi mua:</span>
+                        <a href="#" class="active">1800.1060</a>
+                        <span> (7:30 - 22:00)</span>
+                    </li>
+                    <li>
+                        <span>Khiếu nại:</span>
+                        <a href="#" class="active">1800.1062</a>
+                        <span> (8:00 - 21:30)</span>
+                    </li>
+                    <li>
+                        <span>Bảo hành:</span>
+                        <a href="#" class="active">1800.1060</a>
+                        <span> (8:00 - 21:00)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_content_item">
+                <div class="footer_content_item_social">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook" style="color: blue;"></i>
+                        3915.4k Fan
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube" style="color: red;"></i>
+                        3915.4k Fan
+                    </a>
+                </div>
+                <div class="footer_content_item_certify">
+                    <a href="#"><div class="item_certify_congthuong"></div></a>
+                    <a href="#"><div class="item_certify_KhieuNai"></div></a>
+                    <a href="#"><div class="item_certify_DMCA"></div></a>
+                    <a href="#"><div class="item_certify_NCSC"></div></a>
+                </div>
+                <div class="footer_content_item_website">
+                    <p class="footer_w_hd">Website cùng tập đoàn</p>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        var menu__contents = document.querySelectorAll(".home__main_menu__content");
+        var menu__contents_item = [];
+        var i = 0;
+        while (i < menu__contents.length) {
+            menu__contents_item[i] = menu__contents[i].querySelectorAll(".menu__content_item");
+            if (menu__contents_item[i].length <= 4) {
+                menu__contents[i].setAttribute("style", `grid-template-columns: repeat(${menu__contents_item[i].length},200px)`)
+            }
+            i++;
+        }
+
+        //function slider
+        var slider_list = document.querySelector(".slider_list");
+        var slider_lists = slider_list.querySelectorAll(".slider_item");
+        var number_sliderItem = slider_lists.length;
+        let widthSliderItem = slider_lists[0].offsetWidth + 20;
+        var indexSlider = 1;
+        var translate = 0;
+        function slider() {
+            if (indexSlider < number_sliderItem - 1) {
+                translate -= widthSliderItem;
+                indexSlider++;
+            }
+            else {
+                translate = 0;
+                indexSlider = 1;
+            }
+            slider_list.style.translate = translate + "px";
+        }
+        var starSlider = setInterval(slider, 4000);
+        function resetIntervalSlider() {
+            clearInterval(starSlider);
+            starSlider = setInterval(slider, 4000);
+        }
+
+        function sliderNext() {
+            if (indexSlider < number_sliderItem - 1) {
+                slider_list.style.translate = translate - widthSliderItem + "px";
+                indexSlider = indexSlider + 1;
+                resetIntervalSlider();
+            }
+        }
+        function sliderPre() {
+            if (indexSlider != 1) {
+                indexSlider--;
+                slider_list.style.translate = translate + widthSliderItem + "px";
+                resetIntervalSlider();
+            }
+        }
+
+
+        // HOT DEAL
+        // set width .hotDeal_content_list
+        var hotDeal_content_lists = document.querySelectorAll(".hotDeal_content_list ");
+        for (var i = 0; i < hotDeal_content_lists.length; i++) {
+            var produce_items = hotDeal_content_lists[i].querySelectorAll(".produce_item ");
+            // var widthProduceItem = produce_items[0].offsetWidth;
+            var widthProduceItem = 238;
+            if (produce_items.length != 0) {
+                var width_ProduceList = produce_items.length * (widthProduceItem + 10);
+                hotDeal_content_lists[i].style.width = width_ProduceList + 'px';
+            }
+        }
+
+        // pre next hotDeal_content_list
+        // var translate_hotDeal = -1190 = item(width + margin + padding) * 5;
+        // hotDeal_content_lists[0].style.translate = translate_hotDeal + 'px';
+        // console.log(hotDeal_content_lists[0].style.translate)
+
+        function getMarginLeft(element) {
+            var style = window.getComputedStyle(element);
+            return parseInt(style.marginLeft, 10);
+        }
+
+        function lengthChillInElement(element, nameChill) {
+            var chills = element.querySelectorAll(nameChill);
+            return chills.length;
+        }
+
+        function HotDeal_Pre(element) {
+            var parent = element.parentNode;
+            var hotDeal_content_list = parent.querySelector('.hotDeal_content_list');
+            var marginLeft_hotDeal_content_list = getMarginLeft(hotDeal_content_list);
+            var marginLeft = 0;
+            if (marginLeft_hotDeal_content_list == 0) {
+                if (lengthChillInElement(hotDeal_content_list, '.produce_item') % 5 == 0)
+                    marginLeft = -1190 * (parseInt(lengthChillInElement(hotDeal_content_list, '.produce_item') / 5) - 1);
+                else
+                    marginLeft = -1190 * (parseInt(lengthChillInElement(hotDeal_content_list, '.produce_item') / 5));
+            }
+            else
+                marginLeft = marginLeft_hotDeal_content_list + 1190;
+            hotDeal_content_list.style.marginLeft = marginLeft + 'px';
+        }
+
+        function HotDeal_Next(element) {
+            var parent = element.parentNode;
+            var hotDeal_content_list = parent.querySelector('.hotDeal_content_list');
+            var marginLeft_hotDeal_content_list = getMarginLeft(hotDeal_content_list);
+            var marginLeft = marginLeft_hotDeal_content_list - 1190;
+            if (lengthChillInElement(hotDeal_content_list, '.produce_item') % 5 == 0)
+                if (marginLeft == -1190 * (parseInt(lengthChillInElement(hotDeal_content_list, '.produce_item') / 5)))
+                    marginLeft = 0;
+                else
+                    if (marginLeft == -1190 * (parseInt(lengthChillInElement(hotDeal_content_list, '.produce_item') / 5) + 1))
+                        marginLeft = 0;
+            hotDeal_content_list.style.marginLeft = marginLeft + 'px';
+        }
+
+    </script>
+</body>
+</html>

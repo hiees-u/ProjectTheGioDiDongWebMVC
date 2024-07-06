@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Main.Models.ado_CartDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/Content/Assests/Style/main_cart_layout.css" rel="stylesheet" />
+
+<div class="cart_content">
+    <div class="cart_item cart_header">
+        <div class="cart_item_check">
+            <input type="checkbox" id="ckcAll" value="0">
+        </div>
+        <div class="cart_item_name">
+            <span>Sẩn Phẩm</span>
+        </div>
+
+        <div class="cart_item_Option">
+        </div>
+
+        <div class="cart_item_pri">
+            <span>
+                Giá
+            </span>
+        </div>
+        <div class="cart_item_quantity">
+            <span>Số lượng</span>
+        </div>
+        <div class="cart_item_del">
+        </div>
+    </div>
+
+    @if (ViewBag.Error == null)
+    {
+
+        foreach (var item in Model)
+        {
+            <form action="~/Cart/UpdateCart" method="post">
+
+                <div class="cart_item">
+                    <div class="cart_item_check">
+                        <input class="ckcOPtion" type="checkbox" name="ckcOPtion" id="#" value="@item.OptionId">
+                    </div>
+                    <input type="hidden" name="idOption" value="@Html.DisplayFor(modelItem => item.OptionId)" />
+                    <input type="hidden" name="idProduct" value="@Html.DisplayFor(modelItem => item.ProductId)" />
+                    <div class="cart_item_img">
+                        <img src="~/Content/Images/Products/@Html.DisplayFor(modelItem => item.img)" alt="">
+                    </div>
+                    <div class="cart_item_name">
+                        <span><a href="@Url.Action("ProductDetail","Product", new { id = item.ProductId, idOP = item.OptionId })">@Html.DisplayFor(modelItem => item.nameProduct)</a></span>
+                    </div>
+
+                    <div class="cart_item_Option">
+                        @Html.Action("OptionPartial", "Product", new { @IdPro = item.ProductId, @selected = item.OptionId })
+                    </div>
+
+                    <div class="cart_item_pri">
+                        <span>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </span>
+                    </div>
+                    <div class="cart_item_quantity">
+                        <input style="outline: none; width: 30px; border: none; font-weight: bold;" min="1" type="number" name="Sl" value="@item.Capacity" />
+                    </div>
+                    <div class="cart_item_del">
+                        <a href="@Url.Action("DeleteCart","Cart",new { @OptId = @item.OptionId })">Xóa</a>
+                        <input type="submit" name="name" value="Cập Nhật" />
+                    </div>
+                </div>
+
+            </form>
+
+        }
+
+    }
+    else
+    {
+        <h1 style=" width: 100%; padding: 30px 0; text-align: center; font-size: 25px;">@ViewBag.Error</h1>
+    }
+
+    <div class="cart_item footer">
+        <div class="cart_btn">
+            <input name="order" type="button" value="Mua">
+            <a href="@Url.Action("Index","Order")">content</a>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+        $('input[name="order"]').click(function(e) {
+            e.preventDefault();
+            var checkboxValues = [];
+            $('input[name="ckcOPtion"]:checked').each(function() {
+                checkboxValues.push($(this).val());
+            });
+            $.ajax({
+                url: '@Url.Action("Index", "Order")',
+                type: 'POST',
+                data: { checkboxValues: checkboxValues },
+                success: function (data) {
+                    window.location.href = data.newUrl;
+                }
+            });
+        });
+    });
+
+    document.getElementById("ckcAll").addEventListener("click", function () {
+        const Options = document.querySelectorAll(".ckcOPtion");
+        Options.forEach(x => x.checked = document.getElementById("ckcAll").checked)
+    });
+
+
+
+</script>

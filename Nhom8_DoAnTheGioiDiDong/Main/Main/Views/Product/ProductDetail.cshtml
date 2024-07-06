@@ -1,0 +1,177 @@
+﻿@model Main.Models.ado_Product_Option
+
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    int index_option = 1;
+    for (int i = 0; i < Model.Options.Count(); i++)
+    {
+        if (Model.Options[i].id == ViewBag.idOp)
+        {
+            index_option = i;
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/Content/Assests/Style/detailProduct.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="content_header">
+            <h1 class="name">Điện thoại @Model.name</h1>
+            <div class="review_star">
+                <i class="fa-solid fa-star active"></i>
+                <i class="fa-solid fa-star active"></i>
+                <i class="fa-solid fa-star active"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="quantity_review">322 đánh giá</p>
+
+        </div>
+        <div class="content_main">
+            <div class="main_left">
+                <div class="slider">
+                    @foreach (var item in Model.Options)
+                    {
+                        <div class="mySlides">
+                            <img src="~/Content/Images/Products/@item.img">
+                        </div>
+                    }
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Thumbnail images -->
+                    <div class="row">
+                       @for (int i = 0; i < Model.Options.Count(); i++)
+                       {
+                            <div class="column">
+                                <img class="demo cursor" src="~/Content/Images/Products/@Model.Options[i].img" style="width:100%" onclick="currentSlide(@i + 1)" alt="The Woods">
+                            </div>
+                       }
+                    </div>
+                </div>
+
+                <div class="description">
+                    <p>@Model.decription</p>
+                </div>
+            </div>
+            <div class="main_right">
+
+                <div class="option">
+
+                    @for (int i = 0; i < Model.Options.Count(); i++)
+                    {
+                        if (Model.Options[i].id == ViewBag.idOp)
+                        {
+                            <div class="option_item active" onclick="currentSlide(@i + 1)" >
+                                <a href="@Url.Action("ProductDetail","Product", new { id = Model.id, idOp = Model.Options[i].id })">
+                                    @Model.Options[i].name
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="option_item" onclick="currentSlide(@i + 1)">
+                                <a href="@Url.Action("ProductDetail","Product", new { id = Model.id, idOp = Model.Options[i].id })">
+                                    @Model.Options[i].name
+                                </a>
+                            </div>
+                        }
+
+                    }
+
+                </div>
+
+                @foreach (var item in Model.Options)
+                {
+                    if (item.id == ViewBag.idOp)
+                    {
+                        <p class="price">@item.price</p>
+                    }
+                }
+
+                <div class="promotion">
+                    <div class="promotion_header">
+                        <b>Khuyến mãi</b>
+                    </div>
+                    <div class="promotion_content">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                Thu cũ Đổi mới: Giảm đến 2 triệu (Tuỳ model máy cũ, Không kèm thanh toán qua cổng online, mua kèm)
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                Hoàn 200,000đ cho chủ thẻ tín dụng HOME CREDIT khi thanh toán đơn hàng từ 5,000,000đ
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                Nhập mã MMSALE100 giảm ngay 1% tối đa 100.000đ khi thanh toán qua MOMO
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                Nhập mã VNPAYTAO giảm ngay 200K cho đơn hàng từ 15 Triệu, chỉ áp dụng thanh toán VNPAY-QR tại cửa hàng
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                Nhập mã ZLPIP15 giảm ngay 300K cho đơn hàng từ 20 Triệu, chỉ áp dụng thanh toán qua Ví ZALOPAY tại cửa hàng
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="promotion_footer">
+                        (<span>*</span>) Giá hoặc khuyến mãi không áp dụng trả góp lãi suất đặc biệt (0%, 0.5%, 1%, 1.5%, 2%)
+                    </div>
+                </div>
+
+                <input type="hidden" name="idOp" value="@ViewBag.idOp" />
+                <a class="addCart" href="@Url.Action("AddCart","Cart", new {@idOP = ViewBag.idOP, @strURL = Request.Url.ToString() })">
+                    Thêm vào giỏ hàng
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let slideIndex = @index_option + 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+</body>
+</html>

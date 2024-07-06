@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Main.Models.ado_CartDetail>
+
+@{
+    ViewBag.Title = "ConfirmOrder";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Assests/Style/mani_order.css">
+@*<link rel="stylesheet" href="~/Content/Assests/Style/main_index_layout_page.css">*@
+
+
+<div class="content_order">
+    <div class="group_product_order">
+        <div class="cart_item cart_header">
+            <div class="cart_item_name">
+                <span>Sẩn Phẩm</span>
+            </div>
+            <div class="cart_item_pri">
+                <span>
+                    Đơn Giá
+                </span>
+            </div>
+            <div class="cart_item_quantity">
+                <span>Số lượng</span>
+            </div>
+            <div class="cart_item_sumPri">
+                <span>Thành Tiền</span>
+            </div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="cart_item">
+                <div class="cart_item_img">
+                    <img src="~/Content/Images/Products/@item.img" alt="">
+                </div>
+                <div class="cart_item_name">
+                    <span>@item.nameProduct</span>
+                </div>
+
+                <div class="cart_item_Option">
+                    <span>@item.OpName</span>
+                </div>
+
+                <div class="cart_item_pri">
+                    <span>
+                        @item.price
+                    </span>
+                </div>
+                <div class="cart_item_quantity">
+                    <span>@item.Capacity</span>
+                </div>
+                <div class="cart_item_sumPri">
+                    <span>
+                        @item.Capacity
+                    </span>
+                </div>
+            </div>
+        }
+
+
+        <div class="cart_item item_bottom">
+            <div class="cart_item_quantity">
+                <span>1</span>
+            </div>
+            <div class="cart_item_sumPri">
+                <span>
+                    18.290.000 đ
+                </span>
+            </div>
+        </div>
+    </div>
+    <form action="~/Order/AddOrder" class="orderIf" method="post">
+        @Html.Action("frmUserOrderPartial", "Order")
+        <div class="frm_box header">
+            <h1>Thông Tin Người Nhận</h1>
+        </div>
+
+        
+
+        <div class="frm_box header">
+            <input type="submit" value="Đặt">
+        </div>
+    </form>
+
+
+</div>

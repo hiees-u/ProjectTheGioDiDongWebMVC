@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./main_page_login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="register active">
+                <form action="#" method="post">
+                    <h1>ĐĂNG KÍ</h1>
+                    <input type="text" name="name_user" id="name_user" placeholder="Tên đăng nhập...">
+                    <input type="password" name="pass_user" id="pass_user" placeholder="Nhập mật khẩu...">
+                    <input type="password" name="re_pass_user" id="re_pass_user" placeholder="Nhập lại mật khẩu...">
+                    <button type="submit">TIẾP TỤC</button>
+                    <a onclick="getLogin()">Đã có tài khoản...</a>
+                </form>
+            </div>
+            <div class="site_icon">
+                <img src="./images/Backgroud/login_img.png" alt="">
+            </div>
+            <div class="login">
+                <form action="#" method="post">
+                    <h1>ĐĂNG NHẬP</h1>
+                    <input type="text" name="name_user" id="name_user" placeholder="Tên đăng nhập...">
+                    <input type="passwdord" name="pass_user" id="pass_user" placeholder="Nhập mật khẩu...">
+                    <button type="submit">TIẾP TỤC</button>
+                    <a onclick="getRegister()">Tạo tài khoản...</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var div_login = document.querySelector('.login');
+        var div_register = document.querySelector('.register');
+        function getLogin() {
+            div_register.classList.add("active");
+            div_login.classList.remove("active")
+        }
+        function getRegister() {
+            div_login.classList.add("active");
+            div_register.classList.remove("active")
+        }
+    </script>
+</body>
+</html>

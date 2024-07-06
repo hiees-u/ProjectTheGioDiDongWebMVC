@@ -1,0 +1,67 @@
+﻿@model Main.Models.Product
+
+@{
+    ViewBag.Title = "createCategory";
+    Layout = "~/Areas/Admin/Views/Shared/admin_page.cshtml";
+}
+<style>
+    #Name {
+        width: 500px;
+        height: 10px;
+    }
+    .form-horizontal * {
+        padding: 10px 0px;
+    }
+</style>
+<h2>TẠO SẢN PHẨM MỚI</h2>
+
+@using (Html.BeginForm("createProduct", "Product"))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr style="padding: 0px" />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        Tên loại
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Mô tả
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Loại
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.categoryId, (SelectList)ViewBag.pdcg, "Chọn loại", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.categoryId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Hãng
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.brandId, (SelectList)ViewBag.pdbr, "Chọn Hãng", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.brandId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="margin-left: 120px; ">
+            <input type="submit" value="Tạo" class="btn btn-default" style="width:100px" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    <a href="@Url.Action("showProduct","Product")" style="color:blue">Back to Product list</a>
+</div>

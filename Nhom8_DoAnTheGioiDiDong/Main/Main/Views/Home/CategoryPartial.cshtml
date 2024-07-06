@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Main.Models.ado_Category>
+
+
+
+
+<ul class="home__main_menu">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("ProductCategory","Home",new { id = item.id }, null)">
+                <span>@item.name</span>
+            </a>
+        </li>
+    }
+</ul>

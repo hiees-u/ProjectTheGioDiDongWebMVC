@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Main.Models.ado_Option>
+
+<select name="Options" style=" padding: 5px 20px; outline: none; font-weight: bold;width: 100%">
+
+    @foreach (var item in Model)
+    {
+        if (ViewBag.selected != item.id)
+        {
+            <option  value="@item.id">@item.name</option>
+        }
+        else
+        {
+            <option selected value="@item.id">@item.name</option>
+        }
+
+    }
+
+</select>
+

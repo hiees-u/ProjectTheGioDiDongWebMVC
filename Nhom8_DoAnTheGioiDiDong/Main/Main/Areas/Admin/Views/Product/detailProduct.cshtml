@@ -1,0 +1,33 @@
+﻿@using Main.Models
+
+@{
+    ViewBag.Title = "showProduct";
+    Layout = "~/Areas/Admin/Views/Shared/admin_page.cshtml";
+    var pd = Session["info"] as Product;
+}
+<style>
+    .detail *{
+        padding: 10px 0px;
+    }
+</style>
+<div class="detail">
+    <h2>DETAIL PRODUCT</h2>
+    <p>
+        Id : @pd.Id
+    </p>
+    <p>
+        Name : @pd.Name
+    </p>
+    <p>
+        Description : @pd.Description
+    </p>
+    <p>
+        Category : @pd.Category.Name
+    </p>
+    <p>
+        Brand : @pd.Brand.Name
+    </p>
+    <div>
+        <a href="@Url.Action("showProduct","Product")" style="color:blue">Back to Product list</a>
+    </div>
+</div>

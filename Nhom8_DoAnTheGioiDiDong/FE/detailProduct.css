@@ -1,0 +1,250 @@
+
+:root {
+    --width-content: 1200px;
+    --max-width-content: 1200px;
+    --width-name-cart: 45%;
+    --width-name-cart: 15%;
+    --color-primary: #f96f3a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: #222;
+}
+
+.content {
+    width: 100%;
+    background-color: #fff;
+    max-width: var(--max-width-content);
+    margin: auto;
+}
+
+.content_header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px solid #f96f3a;
+    margin: 0 auto 20px;
+}
+
+.review_star, .quantity_review{
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.review_star i{
+    color: rgb(156, 152, 152);
+}
+
+.review_star i.active{
+    color: #f96f3a;
+}
+
+.content_main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+}
+
+.main_left {
+    width: 69%;
+}
+
+.main_right {
+    width: 30%;
+    padding: 0 10px;
+}
+
+/* slider */
+.slider {
+    position: relative;
+    margin-bottom: 30px;
+}
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  .mySlides img {
+    height: 400px;
+    margin: auto;
+    display: block;
+  }
+
+
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .row {
+    margin-top: 20px;
+    border-top: 1px solid #f96f3a;
+    padding: 20px 10px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+.description {
+    padding: 0 30px;
+}
+
+.description p{
+    font-size: 24px;
+}
+
+.price {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.addCart {
+    height: 60px;
+    width: 270px;
+    font-size: 24px;
+    border: none;
+    margin: 60px auto;
+    display: block;
+    font-weight: bold;
+    color: #f2f2f2;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f96f3a;
+}
+
+.promotion {
+    margin: 20px 0;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #bebbbb;
+}
+
+.promotion_header {
+    font-size: 26px;
+    padding: 10px;
+    border-bottom: 1px solid #bebbbb;
+}
+
+.promotion_content {
+    padding: 10px;
+    border-bottom: 2px dashed #bebbbb;
+}
+
+.promotion_content ul li{
+    margin: 5px 0;
+}
+
+.promotion_content ul li i{
+    color: #f96f3a;
+}
+
+.promotion_footer {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.promotion_footer span {
+    color: red;
+}
+/*  */
+
+.option {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  padding: 10px 0;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.option_item {
+  font-size: 24px;
+  padding: 0 10px;
+  width: fit-content;
+  border-radius: 8px;
+  border: 1px solid #bebbbb;
+  font-weight: bold;
+  margin: 0px 10px 10px 0;
+}
+
+.option_item.active {
+  border: 1px solid #f96f3a;
+  color: #f96f3a;
+}
+
+.option_item.active a {
+  color: #f14d0c;
+}

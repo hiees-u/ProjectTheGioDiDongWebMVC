@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Main.Models.ado_Product_Option>
+
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Assests/Style/product_list_page.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="home_banner_mini">
+        <a href="#">
+            <img src="~/Content/Images/Banners/@ViewBag.Banner" alt="">
+        </a>
+    </div>
+
+    @if (Model.Count() == 0)
+    {
+        <h1 style="text-align: center; margin: 70px; font-size: 40px;">
+            Hiện Chưa Có Sản Phẩm!
+        </h1>
+    }
+    else
+    {
+        <div class="content">
+
+        @foreach (var item in Model)
+        {
+            <div class="produce_item">
+                <a href="@Url.Action("ProductDetail","Product", new { id = item.id, idOP = item.Options[0].id })">
+                    <div href="#" class="produce_item_img">
+                        <img src="~/Content/Images/Products/@item.Options[0].img" alt="">
+                    </div>
+                    <h3 class="produce_name">@item.name</h3>
+                    <strong class="produce_price">
+                        @item.Options[0].price
+                        <small>-11%</small>
+                    </strong>
+                    <div class="produce_vote">
+                        <span>
+                            4.5
+                        </span>
+                        <i class="fa-solid fa-star"></i>
+                        (357)
+                    </div>
+                </a>
+            </div>
+        }
+
+        </div>
+    }
+
+</body>
+</html>

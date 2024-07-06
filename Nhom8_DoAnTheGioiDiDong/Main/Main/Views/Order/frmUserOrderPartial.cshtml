@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Main.Models.ado_Order>
+@{
+    var user = ViewBag.userif as Main.Models.ado_UserInfo;
+}
+
+<link rel="stylesheet" href="~/Content/Assests/Style/mani_order.css">
+<link rel="stylesheet" href="~/Content/Assests/Style/main_index_layout_page.css">
+
+<div class="frm_box">
+    <label for="">Tên Người Nhận</label>
+    <input list="namelst" name="name" value="@user.accountName">
+    <datalist id="namelst">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Name" />
+            @item.Name
+        }
+    </datalist>
+    <span class="err_mess">Vui lòng nhập tên</span>
+</div>
+
+<div class="frm_box">
+    <label for="">Số Điện Thoại Người Nhận</label>
+    <input list="phone" type="tel" name="phone" value="@user.Phone">
+    <datalist id="phone">
+        @foreach (var item1 in Model)
+        {
+            <option value="@item1.Phone" />
+            @item1.Phone
+        }
+    </datalist>
+    <span class="err_mess">Vui lòng nhập tên</span>
+</div>
+
+<div class="frm_box">
+    <label for="">Địa Chỉ Nhận Hàng</label>
+    <input list="adress" type="text" name="adress" value="@user.Address">
+    <datalist id="adress">
+        @foreach (var item2 in Model)
+        {
+            <option value="@item2.Address" />
+        }
+    </datalist>
+    <span class="err_mess">Vui lòng nhập tên</span>
+</div>
+
+

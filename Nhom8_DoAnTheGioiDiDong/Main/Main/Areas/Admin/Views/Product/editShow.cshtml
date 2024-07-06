@@ -1,0 +1,57 @@
+﻿@model Main.Models.ado_Product
+
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "~/Areas/Admin/Views/Shared/admin_page.cshtml";
+}
+<style>
+    .form-horizontal * {
+        padding: 10px 0px;
+    }
+</style>
+<h2>SỬA THÔNG TIN SẢN PHẨM</h2>
+
+@using (Html.BeginForm("editShow", "Product"))
+{
+    <div class="form-horizontal">
+        <hr style="padding: 0px" />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Tên loại
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Mô tả
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.decription, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Loại
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.categoryId, (SelectList)ViewBag.pdcg, "Chọn loại", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Hãng
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.brandId, (SelectList)ViewBag.pdbr, "Chọn Hãng", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" style="width:100px" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Product List", "showProduct", "Product")
+</div>
